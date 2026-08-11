@@ -59,7 +59,7 @@ Autogenerate 1000
  			,Dim1
             ,TransID;
             
-            
+ /*           
  If 1 = 1 then 
  	trace Hello;
  else
@@ -67,6 +67,9 @@ Autogenerate 1000
  
  endif
  
+ 
+ 
+ */
  
  
  
