@@ -20,7 +20,7 @@
         "object_type": "sn-table"
     },
     {
-        "expression": "Sum(Expression1)",
+        "expression": "Sum(Expression1)/min(Expression1)",
         "is_master_item": false,
         "label": "Sales Qty",
         "library_id": null,
