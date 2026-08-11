@@ -101,6 +101,28 @@ Autogenerate 1000
 LET a=0;
 let t=10;
 
+// This will be a new code block here
+
+Concatenate("Transactions")
+Load
+ TransLineID, 
+ TransID,
+ mod(TransID,26)+1 as Num,
+ Pick(Ceil(3*Rand1),'A','B','C') as Dim8,
+ Pick(Ceil(9*Rand1),'a','b','c','d','e','f','g','h','i') as Dim7,
+ Pick(Ceil(3*Rand()),'X','Y','Z') as Dim9,
+ Round(10000*Rand()*Rand()*Rand1) as Expression4,
+ Round(  100*Rand()*Rand()*Rand1) as Expression5,
+ Round(Rand()*Rand1,0.00001) as Expression6;
+Load 
+ Rand() as Rand1,
+ IterNo() as TransLineID,
+ RecNo() as TransID
+Autogenerate 1000
+ While Rand()<=0.5 or IterNo()=1;
+
+// End of new block code
+
 
 Do while a<t
 
@@ -128,6 +150,28 @@ loop
 
 
 trace end loop;
+
+// This will be a new code block here
+
+Concatenate("Transactions")
+Load
+ TransLineID, 
+ TransID,
+ mod(TransID,26)+1 as Num,
+ Pick(Ceil(3*Rand1),'A','B','C') as Dim8,
+ Pick(Ceil(9*Rand1),'a','b','c','d','e','f','g','h','i') as Dim7,
+ Pick(Ceil(3*Rand()),'X','Y','Z') as Dim9,
+ Round(10000*Rand()*Rand()*Rand1) as Expression4,
+ Round(  100*Rand()*Rand()*Rand1) as Expression5,
+ Round(Rand()*Rand1,0.00001) as Expression6;
+Load 
+ Rand() as Rand1,
+ IterNo() as TransLineID,
+ RecNo() as TransID
+Autogenerate 1000
+ While Rand()<=0.5 or IterNo()=1;
+
+// End of new block code
 
 
 
