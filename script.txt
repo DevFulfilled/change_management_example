@@ -190,21 +190,6 @@ let I = floor(Rand()*2)+1;
 trace $(I) Rand;
 
 
-Switch I
-
-Case 1
-
-LOAD '$(I): CASE 1' as case autogenerate 1;
-
-Case 2
-
-LOAD '$(I): CASE 2' as case autogenerate 1;
-
-Default
-
-LOAD '$(I): DEFAULT' as case autogenerate 1;
-
-End Switch
 
 
 
