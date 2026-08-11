@@ -1,20 +1,5 @@
 SHEETS
 ======
 
-Sheet 1
--------
-
-ID: AZQJgH
-Type: sheet
-Rank: 0
-Published: No
-Approved: No
-Publish Time: 
-Created Date: 
-Modified Date: 
-Thumbnail: {
-    "qStaticContentUrl": []
-}
-
---------------------------------------------------------------------------------
+No sheets returned.
 
