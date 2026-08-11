@@ -1,0 +1,13 @@
+MASTER MEASURES
+===============
+
+Title: Sales Total
+Label: Sales Total
+ID: mFfbP
+Tags: Sales
+
+Expression:
+Sum([Expression3])+100
+
+--------------------------------------------------------------------------------
+

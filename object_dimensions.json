@@ -1,0 +1,30 @@
+[
+    {
+        "dimension_index": 0,
+        "field_defs": [
+            "Dim1"
+        ],
+        "field_labels": [
+            ""
+        ],
+        "is_master_item": false,
+        "library_id": null,
+        "object_id": "udszfX",
+        "object_title": "",
+        "object_type": "sn-table"
+    },
+    {
+        "dimension_index": 0,
+        "field_defs": [
+            "Dim2"
+        ],
+        "field_labels": [
+            ""
+        ],
+        "is_master_item": false,
+        "library_id": null,
+        "object_id": "kHCpwv",
+        "object_title": "",
+        "object_type": "table"
+    }
+]

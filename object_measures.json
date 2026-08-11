@@ -1,0 +1,32 @@
+[
+    {
+        "expression": "(Avg(Expression2)+ avg(Expression2))\r\n/\nsum(Expression2)",
+        "is_master_item": false,
+        "label": "Margin %",
+        "library_id": null,
+        "measure_index": 0,
+        "object_id": "JtFCjSx",
+        "object_title": "",
+        "object_type": "kpi"
+    },
+    {
+        "expression": null,
+        "is_master_item": true,
+        "label": null,
+        "library_id": "mFfbP",
+        "measure_index": 0,
+        "object_id": "udszfX",
+        "object_title": "",
+        "object_type": "sn-table"
+    },
+    {
+        "expression": "Sum(Expression1)/min(Expression1)",
+        "is_master_item": false,
+        "label": "Sales Qty",
+        "library_id": null,
+        "measure_index": 0,
+        "object_id": "kHCpwv",
+        "object_title": "",
+        "object_type": "table"
+    }
+]
