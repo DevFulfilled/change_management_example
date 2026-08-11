@@ -151,7 +151,7 @@
                         "qAccumulate": 0,
                         "qActiveExpression": 0,
                         "qAggrFunc": "Expr",
-                        "qDef": "Sum(Expression1)",
+                        "qDef": "Sum(Expression1)/min(Expression1)",
                         "qExpressions": [],
                         "qGrouping": "N",
                         "qLabel": "Sales Qty",
