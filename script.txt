@@ -52,7 +52,8 @@ Load
 Autogenerate 1000
  While Rand()<=0.5 or IterNo()=1;
 
- Comment Field Dim2 With "This is a field comment";
+ Comment Field Dim2 With "This is a field comment"; // Don't worry about this!
+ 
  
  
  Drop Field Expression1
