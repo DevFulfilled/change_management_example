@@ -52,7 +52,7 @@ Load
 Autogenerate 1000
  While Rand()<=0.5 or IterNo()=1;
 
- Comment Field Dim1 With "This is a field comment";
+ Comment Field Dim2 With "This is a field comment";
  
  
  Drop Field Expression1
@@ -60,10 +60,10 @@ Autogenerate 1000
             ,TransID;
             
             
- If 1 = 2 then 
- 	trace Hello;
+ If 1 = 5 then 
+ 	trace Hello You;
  else
- 	trace goodbye;
+ 	trace goodbye my friend;
  
  endif
  
@@ -100,7 +100,7 @@ let t=10;
 
 Do while a<t
 
-	let a=a+1;
+	let a=a+2;
     
     Concatenate(Transactions)
     Load
@@ -110,7 +110,7 @@ Do while a<t
      Pick(Ceil(3*Rand1),'A','B','C') as Dim1,
      Pick(Ceil(6*Rand1),'a','b','c','d','e','f') as Dim2,
      Pick(Ceil(3*Rand()),'X','Y','Z') as Dim3,
-     Round(1000*Rand()*Rand()*Rand1) as Expression1,
+     Round(1000*Rand()*Rand()*Rand1)+100 as Expression1,
      Round(  10*Rand()*Rand()*Rand1) as Expression2,
      Round(Rand()*Rand1,0.00001) as Expression3;
     Load 
@@ -127,13 +127,13 @@ trace end loop;
 
 
 
-// ASCII:
-// Load 
-//  if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
-//  Chr(RecNo()) as AsciiAlpha, 
-//  RecNo() as AsciiNum
-// autogenerate 255
-//  Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
+ASCII:
+Load 
+ if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
+ Chr(RecNo()) as AsciiAlpha, 
+ RecNo() as AsciiNum
+autogenerate 255
+ Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
 
 
 ///$tab Third Tab
@@ -160,15 +160,17 @@ End Switch
 
 
 
-Exit script;
 
 
 
 
-// All of these are inactive!
+
 let I = floor(Rand()*2)+1;
 trace $(I) Rand;
 
+
+Exit script;
+// All of these are inactive!
 
 Switch I
 
