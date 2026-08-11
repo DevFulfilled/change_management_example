@@ -60,10 +60,10 @@ Autogenerate 1000
             ,TransID;
             
             
- If 1 = 5 then 
- 	trace Hello You;
+ If 1 = 1 then 
+ 	trace Hello;
  else
- 	trace goodbye my friend;
+ 	trace goodbye;
  
  endif
  
@@ -100,7 +100,7 @@ let t=10;
 
 Do while a<t
 
-	let a=a+2;
+	let a=a+4;
     
     Concatenate(Transactions)
     Load
@@ -127,13 +127,13 @@ trace end loop;
 
 
 
-ASCII:
-Load 
- if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
- Chr(RecNo()) as AsciiAlpha, 
- RecNo() as AsciiNum
-autogenerate 255
- Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
+// ASCII:
+// Load 
+//  if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
+//  Chr(RecNo()) as AsciiAlpha, 
+//  RecNo() as AsciiNum
+// autogenerate 255
+//  Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
 
 
 ///$tab Third Tab
@@ -162,6 +162,8 @@ End Switch
 
 
 
+Exit script;
+// All of these are inactive!
 
 
 
@@ -169,8 +171,6 @@ let I = floor(Rand()*2)+1;
 trace $(I) Rand;
 
 
-Exit script;
-// All of these are inactive!
 
 Switch I
 
