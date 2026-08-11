@@ -54,7 +54,7 @@
                         "othersLabel": "Others",
                         "qActiveField": 0,
                         "qFieldDefs": [
-                            "Dim3"
+                            "Dim1"
                         ],
                         "qFieldLabels": [
                             ""
