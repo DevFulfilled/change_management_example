@@ -26,13 +26,13 @@ SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;
 Characters:
 Load Chr(RecNo()+Ord('A')-1) as Alpha, RecNo() as Num autogenerate 26;
  
-ASCII:
+ASCII_TEMP:
 Load 
- if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
- Chr(RecNo()) as AsciiAlpha, 
- RecNo() as AsciiNum
-autogenerate 255
- Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
+ RecNo() as Num,
+ Round(Rand()*Rand1,0.00001)as AsciiAlpha, 
+ IterNo() as ReportID
+autogenerate 200
+ Where (RecNo()>=32;
  
 Transactions:
 Load
@@ -184,12 +184,100 @@ Autogenerate 1000
 //  Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
 
 
+///$tab Middle Tab
+
+proceeding_load:
+LOAD 'ACCOUNT_REF',
+    NAME,
+    'ADDRESS_1',
+    'ADDRESS_2',
+    'RECORD_MODIFY_DATE',
+    'RECORD_DELETED',
+    UUID;
+SQL SELECT 'ACCOUNT_REF',
+    NAME,
+    'ADDRESS_1',
+    'COMPANY_REGISTRATION_NUMBER',
+    'RECORD_CREATE_DATE',
+    'RECORD_MODIFY_DATE',
+    'RECORD_DELETED',
+    UUID
+FROM 'SALES_LEDGER';
 ///$tab Third Tab
 
-let I = floor(Rand()*2)+1;
-trace $(I) Rand;
+LET vURL='https://something';
 
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E",
+    F,
+    G,
+    H,
+    "I",
+    J,
+    K,
+    L,
+    M,
+    "N",
+    O
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [The task]);
 
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E"
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Data Definitions]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Campaign Data]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Customer Profile]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E",
+    F,
+    G,
+    H,
+    "I",
+    J,
+    K,
+    L
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Order Data]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+ /* comment */   "E",
+    F,
+    G,
+    H
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Online responses per day]);
 
 
 
@@ -197,6 +285,9 @@ trace $(I) Rand;
 
 Exit script;
 // All of these are inactive!
+
+let I = floor(Rand()*2)+1;
+trace $(I) Rand;
 
 
 
