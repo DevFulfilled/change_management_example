@@ -155,21 +155,13 @@ trace end loop;
 
 Concatenate("Transactions")
 Load
- TransLineID, 
- TransID,
- mod(TransID,26)+1 as Num,
- Pick(Ceil(3*Rand1),'A','B','C') as Dim8,
- Pick(Ceil(9*Rand1),'a','b','c','d','e','f','g','h','i') as Dim7,
- Pick(Ceil(3*Rand()),'X','Y','Z') as Dim9,
- Round(10000*Rand()*Rand()*Rand1) as Expression4,
- Round(  100*Rand()*Rand()*Rand1) as Expression5,
- Round(Rand()*Rand1,0.00001) as Expression6;
-Load 
- Rand() as Rand1,
- IterNo() as TransLineID,
- RecNo() as TransID
-Autogenerate 1000
- While Rand()<=0.5 or IterNo()=1;
+    TransID,
+    RecNo() as SequenceID,
+    'TEST' as SourceType,
+    Round(Rand() * 25000) as Amount,
+    Date(Today() - Floor(Rand() * 365)) as TransactionDate,
+    If(Rand() > 0.5, 'Open', 'Closed') as Status
+Autogenerate 2500;
 
 // End of new block code
 
