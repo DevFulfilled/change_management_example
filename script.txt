@@ -131,7 +131,7 @@ Do while a<t
     Concatenate(Transactions)
     Load
      TransLineID, 
-     TransID,
+     TransID as %transaction_id,
      mod(TransID,26)+1 as Num,
      Pick(Ceil(3*Rand1),'A','B','C') as Dim1,
      Pick(Ceil(6*Rand1),'a','b','c','d','e','f') as Dim2,
