@@ -7,11 +7,12 @@ Sheet 1
 ID: AZQJgH
 Type: sheet
 Rank: 0
-Published: No
-Approved: No
-Publish Time: 
-Created Date: 
-Modified Date: 
+Published: Yes
+Approved: Yes
+Publish Time: 2026-09-05T13:39:58.417Z
+Created Date: 2026-09-05T13:40:45.497Z
+Modified Date: 2026-09-05T13:40:45.497Z
+Owner: auth0|a08D000000d9u66IAA
 Thumbnail: {
     "qStaticContentUrl": []
 }
