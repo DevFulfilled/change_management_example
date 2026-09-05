@@ -1,0 +1,366 @@
+DEVFULFILLED METADATA EXPORT
+============================
+
+Project: 
+Exported By: Richard Pearce
+Exported At: 2026-09-05 13:56:27
+
+================================================================================
+
+SCRIPT
+======
+
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$ ###0.00;-$ ###0.00';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET FirstWeekDay=6;
+SET BrokenWeeks=1;
+SET ReferenceDay=0;
+SET FirstMonthOfYear=1;
+SET CollationLocale='en-US';
+SET CreateSearchIndexOnReload=1;
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET LongMonthNames='January;February;March;April;May;June;July;August;September;October;November;December';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+SET LongDayNames='Monday;Tuesday;Wednesday;Thursday;Friday;Saturday;Sunday';
+SET NumericalAbbreviation='3:k;6:M;9:G;12:T;15:P;18:E;21:Z;24:Y;-3:m;-6:μ;-9:n;-12:p;-15:f;-18:a;-21:z;-24:y';
+
+
+Characters:
+Load Chr(RecNo()+Ord('A')-1) as Alpha, RecNo() as Num autogenerate 26;
+ 
+ASCII_TEMP:
+Load 
+ RecNo() as Num,
+ Round(Rand()*Rand1,0.00001)as AsciiAlpha, 
+ IterNo() as ReportID
+autogenerate 200
+ Where (RecNo()>=32;
+ 
+Transactions:
+Load
+ TransLineID, 
+ TransID,
+ mod(TransID,26)+1 as Num,
+ Pick(Ceil(3*Rand1),'A','B','C') as Dim1,
+ Pick(Ceil(6*Rand1),'a','b','c','d','e','f') as Dim2,
+ Pick(Ceil(3*Rand()),'X','Y','Z') as Dim3,
+ Round(1000*Rand()*Rand()*Rand1) as Expression1,
+ Round(  10*Rand()*Rand()*Rand1) as Expression2,
+ Round(Rand()*Rand1,0.00001) as Expression3;
+Load 
+ Rand() as Rand1,
+ IterNo() as TransLineID,
+ RecNo() as TransID
+Autogenerate 1000
+ While Rand()<=0.5 or IterNo()=1;
+
+ Comment Field Dim2 With "This is a field comment"; // Don't worry about this!
+ 
+ 
+ 
+ Drop Field Expression1
+ 			,Dim1
+            ,TransID;
+            
+ /*           
+ If 1 = 1 then 
+ 	trace Hello;
+ else
+ 	trace goodbye;
+ 
+ endif
+ 
+ 
+ 
+ */
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+            
+            
+ 
+ 
+ 
+///$tab Second Tab
+
+LET a=0;
+let t=10;
+
+// This will be a new code block here
+
+Concatenate("Transactions")
+Load
+ TransLineID, 
+ TransID,
+ mod(TransID,26)+1 as Num,
+ Pick(Ceil(3*Rand1),'A','B','C') as Dim8,
+ Pick(Ceil(9*Rand1),'a','b','c','d','e','f','g','h','i') as Dim7,
+ Pick(Ceil(3*Rand()),'X','Y','Z') as Dim9,
+ Round(10000*Rand()*Rand()*Rand1) as Expression4,
+ Round(  100*Rand()*Rand()*Rand1) as Expression5,
+ Round(Rand()*Rand1,0.00001) as Expression6;
+Load 
+ Rand() as Rand1,
+ IterNo() as TransLineID,
+ RecNo() as TransID
+Autogenerate 1000
+ While Rand()<=0.5 or IterNo()=1;
+
+// End of new block code
+
+
+Do while a<t
+
+	let a=a+4;
+    
+    Concatenate(Transactions)
+    Load
+     TransLineID, 
+     TransID as %transaction_id,
+     mod(TransID,26)+1 as Num,
+     Pick(Ceil(3*Rand1),'A','B','C') as Dim1,
+     Pick(Ceil(6*Rand1),'a','b','c','d','e','f') as Dim2,
+     Pick(Ceil(3*Rand()),'X','Y','Z') as Dim3,
+     Round(1000*Rand()*Rand()*Rand1)+100 as Expression1,
+     Round(  10*Rand()*Rand()*Rand1) as Expression2,
+     Round(Rand()*Rand1,0.00001) as Expression3;
+    Load 
+     Rand() as Rand1,
+     IterNo() as TransLineID,
+     RecNo() as TransID
+    Autogenerate 10
+     While Rand()<=0.5 or IterNo()=1;
+
+loop
+
+
+trace end loop;
+
+// This will be a new code block here
+
+Concatenate("Transactions")
+Load
+    TransID,
+    RecNo() as SequenceID,
+    'TEST' as SourceType,
+    Round(Rand() * 25000) as Amount,
+    Date(Today() - Floor(Rand() * 365)) as TransactionDate,
+    If(Rand() > 0.5, 'Open', 'Closed') as Status
+Autogenerate 2500;
+
+// End of new block code
+
+
+
+// ASCII:
+// Load 
+//  if(RecNo()>=65 and RecNo()<=90,RecNo()-64) as Num,
+//  Chr(RecNo()) as AsciiAlpha, 
+//  RecNo() as AsciiNum
+// autogenerate 255
+//  Where (RecNo()>=32 and RecNo()<=126) or RecNo()>=160 ;
+
+
+///$tab Middle Tab
+
+proceeding_load:
+LOAD 'ACCOUNT_REF',
+    NAME,
+    'ADDRESS_1',
+    'ADDRESS_2',
+    'RECORD_MODIFY_DATE',
+    'RECORD_DELETED',
+    UUID;
+SQL SELECT 'ACCOUNT_REF',
+    NAME,
+    'ADDRESS_1',
+    'COMPANY_REGISTRATION_NUMBER',
+    'RECORD_CREATE_DATE',
+    'RECORD_MODIFY_DATE',
+    'RECORD_DELETED',
+    UUID
+FROM 'SALES_LEDGER';
+///$tab Third Tab
+
+LET vURL='https://something';
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E",
+    F,
+    G,
+    H,
+    "I",
+    J,
+    K,
+    L,
+    M,
+    "N",
+    O
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [The task]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E"
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Data Definitions]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Campaign Data]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Customer Profile]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+    "E",
+    F,
+    G,
+    H,
+    "I",
+    J,
+    K,
+    L
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Order Data]);
+
+LOAD
+    A,
+    "B",
+    C,
+    D,
+ /* comment */   "E",
+    F,
+    G,
+    H
+FROM [lib://DataFiles/Copy of Qlik_Sense_Case Study.xlsx]
+(ooxml, no labels, table is [Online responses per day]);
+
+
+
+
+
+Exit script;
+// All of these are inactive!
+
+let I = floor(Rand()*2)+1;
+trace $(I) Rand;
+
+
+
+let I = floor(Rand()*2)+1;
+trace $(I) Rand;
+
+
+
+Switch I
+
+Case 1
+
+LOAD '$(I): CASE 1' as case autogenerate 1;
+
+Case 2
+
+LOAD '$(I): CASE 2' as case autogenerate 1;
+
+Default
+
+LOAD '$(I): DEFAULT' as case autogenerate 1;
+
+End Switch
+
+================================================================================
+
+MASTER MEASURES
+===============
+
+Title: Sales
+Label: Sales
+ID: mFfbP
+Tags: Sales
+
+Expression:
+Sum([Expression3])
+
+--------------------------------------------------------------------------------
+
+================================================================================
+
+MASTER DIMENSIONS
+=================
+
+No master dimensions returned.
+
+================================================================================
+
+VARIABLES
+=========
+
+Name: a
+ID: fbc22af4-f1f5-4417-be3d-df956454c640
+Script Created: Yes
+Definition:
+10
+
+--------------------------------------------------------------------------------
+
+Name: t
+ID: 21e1803f-6025-45f0-a4db-d60f8360e1d2
+Script Created: Yes
+Definition:
+10
+
+--------------------------------------------------------------------------------
+
+Name: I
+ID: a0b8b2ce-a105-4db4-bc8f-2eeef0c44479
+Script Created: Yes
+Definition:
+1
+
+--------------------------------------------------------------------------------
+
